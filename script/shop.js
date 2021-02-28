@@ -66,18 +66,10 @@ class GoodItem {
 
       placeToRender.appendChild(block)
 
+      block.classList.add('itemCard')
+      placeToRender.classList.add('placeToRender')
 
-      block.style.fontSize = "15px";
-      block.style.border = "1px solid lightgrey";
-      block.style.borderRadius = "8px";
-      block.style.margin = "12px";
-      block.style.boxShadow = '6px 4px 15px rgba(0, 0, 0, 0.21)';
-      block.style.paddingBottom = "8px";
-          
-      placeToRender.style.display = "flex";
-      placeToRender.style.margin = "34px";
-      placeToRender.style.flexWrap = "wrap";
-      placeToRender.style.justifyContent = "center";
+
     
     }
   }
@@ -91,9 +83,9 @@ class Cart {
 
 
   add (data) {  
-    this._items = [] 
-    this._items.push(data)
-    let goods = this._items
+
+    let goods = []
+    goods.push(data)
     goods = goods.map ( item => {
     return new CartItem ( item )
     })
@@ -138,20 +130,9 @@ class CartItem {
       
       placeToRender.appendChild(block)
 
-      block.style.fontSize = "15px";
-      block.style.border = "1px solid lightgrey";
-      block.style.borderRadius = "8px";
-      block.style.margin = "12px";
-      block.style.boxShadow = '6px 4px 15px rgba(0, 0, 0, 0.21)';
-      block.style.paddingBottom = "8px";
-      block.style.backgroundColor = "white";
-          
-      placeToRender.style.display = "flex";
-      placeToRender.style.margin = "32px";
-      placeToRender.style.flexWrap = "wrap";
-      placeToRender.style.justifyContent = "center";
-      placeToRender.style.backgroundColor = "lightyellow";
-    
+      block.classList.add('cartItemCard')
+      placeToRender.classList.add('cartPlaceToRender')
+   
     }
   }
 }

@@ -1,0 +1,34 @@
+.itemCard {
+    font-size: 15px;
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    margin: 12px;
+    box-shadow: 6px 4px 15px rgba(0, 0, 0, 0.21);
+    padding-bottom: 8px;
+}
+
+.placeToRender {
+    display: flex;
+    margin: 34px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cartItemCard {
+    font-size: 15px;
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    margin: 12px;
+    box-shadow: 6px 4px 15px rgba(0, 0, 0, 0.21);
+    padding-bottom: 8px;
+    background-color: white;
+}
+
+
+.cartPlaceToRender {
+    display: flex;
+    margin: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: lightyellow;
+}
