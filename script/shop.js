@@ -1,31 +1,22 @@
 class List {
   _items = []
-  
-  constructor (CartInstance) {
-    let goods = this.fetchGoods()
-    goods = goods.map(item => {
-      return new GoodItem(item, CartInstance)
-    })
-    this._items = goods
-    this.render()
-  }
 
-  fetchGoods () {
-    return [
-      { name: 'Shirt', price: 150, img: './images/item1.jpg' },
-      { name: 'Socks', price: 250, img: './images/item2.jpg' },
-      { name: 'Jacket', price: 750, img: './images/item3.jpg' },
-      { name: 'Shirt', price: 150, img: './images/item4.jpg' },
-      { name: 'Socks', price: 250, img: './images/item5.jpg' },
-      { name: 'Jacket', price: 750, img: './images/item6.jpg' },
-      { name: 'Shirt', price: 150, img: './images/item7.jpg' },
-      { name: 'Socks', price: 250, img: './images/item8.jpg' },
-      { name: 'Jacket', price: 750, img: './images/item9.jpg' },
-      { name: 'Shirt', price: 150, img: './images/item10.jpg' },
-      { name: 'Socks', price: 250, img: './images/item11.jpg' },
-      { name: 'Jacket', price: 750, img: './images/item12.jpg' },
-    ]
-  }
+  constructor (CartInstance) {
+    this.fetchGoods()
+    .then(res => {
+      return res.json()
+    })
+    .then(res => {
+      this._items = res.data.map(item => {
+        return new GoodItem(item, CartInstance)
+      })
+    })        
+    .then(this.render.bind(this))
+  }    
+
+  fetchGoods () { 
+    return fetch('http://localhost:3000/data.json')
+  }  
 
   render () {
     this._items.forEach(Good => {
@@ -80,7 +71,6 @@ class GoodItem {
 class Cart {
   
   _items = []
-
 
   add (data) {  
 
