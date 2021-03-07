@@ -1,6 +1,7 @@
 class List {
   _items = []
 
+  
   constructor (CartInstance) {
     this.fetchGoods()
     .then(res => {
@@ -14,8 +15,9 @@ class List {
     .then(this.render.bind(this))
   }    
 
-  fetchGoods () { 
-    return fetch('http://localhost:3000/data.json')
+  
+  fetchGoods () {
+    return fetch('https://tabolin-geekbrains.herokuapp.com//data.json')
   }  
 
   render () {
@@ -60,8 +62,6 @@ class GoodItem {
       block.classList.add('itemCard')
       placeToRender.classList.add('placeToRender')
 
-
-    
     }
   }
 }
